@@ -19,6 +19,7 @@ public class SecurityConfig {
                         .requestMatchers("/greet").permitAll()       // greet은 인증 없이 허용
                         .requestMatchers("/greet/").permitAll()     // greet/{name}은 인증 없이 허용
                         .requestMatchers("/user").permitAll()       // user은 인증 없이 허용
+                        .requestMatchers("/register").permitAll()   // register은 인증 없이 허용
                         .anyRequest().authenticated()                 // 나머지는 인증 필요
                 )
                 .csrf(csrf -> csrf.disable());  // CSRF 비활성화 (테스트용)
